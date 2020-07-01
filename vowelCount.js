@@ -36,4 +36,19 @@ function isAVowel(char) {
   }
 }
 
-console.log(getCount("aeiouBBBBHDLKHTTMe"));
+
+// Another way to do it would be to use an array of vowels and compare this way:
+
+// function getCount(str) {
+//   let vowelsCount = 0;
+//   let vowels = ["a", "e", "i", "o", "u"];
+
+//   for (let i = 0; i < str.length; i++;) {
+//     for (j = 0; j < vowels.length; j++) {
+//       if(str[i] === vowels[j]) { // I didn't know you could grab characters of strings this way without using .charAt method
+//         vowelsCount++;
+//       }
+//     }
+//   }
+//   return  vowelsCount;
+// }

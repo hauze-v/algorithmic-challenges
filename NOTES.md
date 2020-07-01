@@ -8,3 +8,10 @@ name.length // property
 name.lastIndexOf("d") // method
 
 Split is a common method used to split a string into an array of strings
+
+## Another way to write for loops ##
+let vowels = "aeiou";
+
+for (let elem of vowels) {
+  console.log(vowels[elem])
+}
