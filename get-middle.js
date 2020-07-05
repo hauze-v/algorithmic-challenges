@@ -12,21 +12,30 @@ Kata.getMiddle("A") should return "A"
 
 */
 
-function getMiddle(s) {
-  let evenOrOdd = even_or_odd(s.length);
+// function getMiddle(s) {
+//   let evenOrOdd = even_or_odd(s.length);
 
-  if (evenOrOdd == "Even") {
-    return s.slice(((s.length / 2) -1), ((s.length / 2) + 1));
-  } else {
-    return s.charAt(Math.floor(s.length / 2));
-  }
-}
+//   if (evenOrOdd == "Even") {
+//     return s.slice(((s.length / 2) -1), ((s.length / 2) + 1));
+//   } else {
+//     return s.charAt(Math.floor(s.length / 2));
+//   }
+// }
 
-function even_or_odd(number) {
-  if (number % 2 === 0) {
-    return "Even"
+// function even_or_odd(number) {
+//   if (number % 2 === 0) {
+//     return "Even"
+//   } else {
+//     return "Odd"
+//   }
+// }
+
+// Substring way
+function getMiddle(str) {
+  if (str.length % 2 === 0) {
+    return str[str.length/2-1] + str[str.length/2];
   } else {
-    return "Odd"
+    return str[Math.floor(str.length/2)]
   }
 }
 
