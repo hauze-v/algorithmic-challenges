@@ -16,7 +16,7 @@ function funkyCapitalize(letter, num) {
   }
 
   return funkyLetters;
-} 
+}
 
 function mumbling(str) {
   let result = [];
