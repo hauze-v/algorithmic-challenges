@@ -20,8 +20,8 @@ function descendingOrder(n) {
 
   // Sort the NumArray in descending order and return
   numArray.sort(function(a,b) {return b - a});
-  return numArray.join("");
+  return parseInt(numArray.join(""));
 }
 
 console.log(descendingOrder(42145)) // 54421
-console.log
+console.log(descendingOrder(145263)) // 654321
