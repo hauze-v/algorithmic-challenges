@@ -16,5 +16,6 @@ for (let elem of vowels) {
   console.log(vowels[elem])
 }
 
+remove this later (testing zsh aliass)
 
 ## Quick way to check for even is using modular === 0 (%) ##
