@@ -11,6 +11,15 @@ Input: 123456789 Output: 987654321
 
 */
 
+/*
+  --- EPIC ONE LINER ---
+
+  function descendingOrder(n){
+    return parseInt(String(n).split('').sort().reverse().join(''))
+  }
+  
+*/
+
 function descendingOrder(n) {
   // Convert the number to an array of strings
   let strArray = n.toString().split("");
