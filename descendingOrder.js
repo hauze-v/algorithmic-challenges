@@ -11,41 +11,17 @@ Input: 123456789 Output: 987654321
 
 */
 
-function getMax(numArray) {
-  let max = numArray[0];
-
-  for (let num of numArray) {
-    if (num >= max) {
-      max = num;
-    }
-  }
-
-  return max;
-}
-
 function descendingOrder(n) {
-  // Declare an empty result to build from
-  let result = [];
-
   // Convert the number to an array of strings
   let strArray = n.toString().split("");
 
   // Convert the array of strings to an array of Numbers
   let numArray = strArray.map(Number);
-  console.log(`Number array: ${numArray}`)
 
-  // Loop through the Number array
-  for (let num of numArray) {
-    if (num)
-  }
-
-  // Get the max digit in the array of Numbers
-  let max = getMax(numArray);
-  console.log("Max: " + max);
-
-  // Push the max to the result array
-  result.push(max);
-  console.log(`Result: ${result}`)
+  // Sort the NumArray in descending order and return
+  numArray.sort(function(a,b) {return b - a});
+  return numArray.join("");
 }
 
 console.log(descendingOrder(42145)) // 54421
+console.log
