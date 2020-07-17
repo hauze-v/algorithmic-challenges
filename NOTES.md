@@ -16,5 +16,4 @@ for (let elem of vowels) {
   console.log(vowels[elem])
 }
 
-
-## Quick way to check for even is using modular === 0 (%) ##
+Quick way to check for even is using modular === 0 (%)
