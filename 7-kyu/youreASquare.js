@@ -37,6 +37,11 @@ function number_test(n) {
      return 'whole';
 }
 
+// A one liner way of doing it
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}
+
 console.log(isSquare(-1));
 console.log(isSquare(0));
 console.log(isSquare(3));
