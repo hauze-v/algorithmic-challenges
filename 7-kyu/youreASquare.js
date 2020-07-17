@@ -20,14 +20,14 @@
 */
 
 function isSquare(n) {
-  let num = number_test(n);
-
+  // If the square root of n is a whole number, then it's a square number.
   if (number_test(Math.sqrt(n)) === 'whole') {
     return true;
   } else
     return false;
 }
 
+// Takes in number and returns whether or not it's whole or decimal
 function number_test(n) {
   var result = (n - Math.floor(n)) !== 0; 
    
