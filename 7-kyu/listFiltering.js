@@ -8,7 +8,14 @@
 */
 
 function filter_list(l) {
+  let result = [];
+  for (let elem of l) {
+    if (typeof elem !== "string") {
+      result.push(elem)
+    }
+  }
 
+  return result;
 }
 
 console.log(filter_list([1,2,'a','b'])) // [1,2]
