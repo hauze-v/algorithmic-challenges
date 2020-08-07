@@ -9,49 +9,58 @@
   Should return: 160 (the only even number)
 */
 
+// function findOutlier(integers) {
+//   /* Define variable to count the number of even digits in the array */
+//   let isEven = false;
+//   let evenCounter = 0;
+
+//   /* Loop through integers array and count number of even digits */
+//   for (let int of integers) {
+//     if (int % 2 === 0) {
+//       evenCounter++;
+//     }
+//   }
+
+//   /* If evenCounter is greater than or equal to 2, array isEven */
+//   if (evenCounter >= 2) {
+//     isEven = true;
+//   }
+
+//   /* If integers array isEven, pullOdd, else pullEven */
+//   let outlier;
+//   if (isEven) {
+//     outlier = pullOdd(integers)
+//   } else {
+//     outlier = pullEven(integers)
+//   }
+
+//   return outlier;
+// }
+
+// function pullOdd(arr) {
+//   for (let num of arr) {
+//     if (num % 2 !== 0) {
+//       return num;
+//     }
+//   }
+// }
+
+// function pullEven(arr) {
+//   for (let num of arr) {
+//     if (num % 2 === 0) {
+//       return num;
+//     }
+//   }
+// }
+
+/* A much easier way to do it using array filters */
 function findOutlier(integers) {
-  /* Define variable to count the number of even digits in the array */
-  let isEven = false;
-  let evenCounter = 0;
-
-  /* Loop through integers array and count number of even digits */
-  for (let int of integers) {
-    if (int % 2 === 0) {
-      evenCounter++;
-    }
-  }
-
-  /* If evenCounter is greater than or equal to 2, array isEven */
-  if (evenCounter >= 2) {
-    isEven = true;
-  }
-
-  /* If integers array isEven, pullOdd, else pullEven */
-  let outlier;
-  if (isEven) {
-    outlier = pullOdd(integers)
-  } else {
-    outlier = pullEven(integers)
-  }
-
-  return outlier;
+  let odd = integers.filter(num => num % 2 !== 0);
+  let even = integers.filter(num => num % 2 == 0);
+  
+  return even.length==1? even[0] : odd[0];
 }
 
-function pullOdd(arr) {
-  for (let num of arr) {
-    if (num % 2 !== 0) {
-      return num;
-    }
-  }
-}
-
-function pullEven(arr) {
-  for (let num of arr) {
-    if (num % 2 === 0) {
-      return num;
-    }
-  }
-}
 
 console.log(findOutlier([2,4,0,100,4,11,2602,36]))
 console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]))
