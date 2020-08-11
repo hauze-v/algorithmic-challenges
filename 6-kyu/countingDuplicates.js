@@ -14,8 +14,36 @@
 */
 
 function countDuplicates (str) {
+  let counterObj = {};
+
+  /* Split the string into an array */
+  let arrayOfCharacters = str.split("");
   
+  /* Loop through the array and if the key/value pair doesn't already exist in counterObj, add it. If it does exist, increment the count value  */
+  for (let char of arrayOfCharacters) {
+    char = char.toLowerCase(); /* Make counter case insensitive */
+    if (counterObj[`${char}`]) {
+      counterObj[`${char}`]++;
+    } else {
+      counterObj[`${char}`] = 1;
+    }
+  }
+  
+  /* Loop through the object */
+  let duplicates = 0;
+  for (let duplicate in counterObj) {
+    if (counterObj[duplicate] >= 2) {
+      duplicates++;
+    }
+  }
+
+  return duplicates;
 }
 
-console.log(countDuplicates('abcde'));
-console.log(countDuplicates('aabbcde')); // 2 ('a' and 'b')
+console.log(countDuplicates('abcde')); // 0 
+console.log(countDuplicates('aaAbbcde')); // 2 ('a' and 'b')
+console.log(countDuplicates('aabBcde')); // 2 ('a' and 'B')
+console.log(countDuplicates('indivisibility')); // 1 ('i' six times)
+console.log(countDuplicates('Indivisibilities')); // 2 ('i' 7 times and 's' 2 times)
+console.log(countDuplicates('aA11')); // 2 ('a' and '1')
+console.log(countDuplicates('ABBA')); // 2 ('A' and 'B')
