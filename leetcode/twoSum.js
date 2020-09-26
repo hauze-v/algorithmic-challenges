@@ -25,21 +25,52 @@
     Only one valid answer exists.
 */
 
-function twoSum(nums, target) {
-  let result = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    console.log(`Sum = ${nums[i] + nums[i+1]}`)
-    if (nums[i] + nums[i+1] === target) {
-      console.log('hey')
-      result.push(i);
-      result.push(i+1);
-    }
-  }
+/* Brute Force Approach: */
+// function twoSum(nums, target) {
+//   let result = [];
 
-  return result;
-}
+//   for(let i =0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[j] == target - nums[i]) {
+//         result.push(i, j);
+//       }
+//     }
+//   }
+
+//   return result;
+// }
 
 console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3,2,4], 6));
 console.log(twoSum([3,3], 6));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* My frist attempt (wrong / only partially correct) */
+// function twoSum(nums, target) {
+//   let result = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     console.log(`Sum = ${nums[i] + nums[i+1]}`)
+//     if (nums[i] + nums[i+1] === target) {
+//       console.log('hey')
+//       result.push(i);
+//       result.push(i+1);
+//     }
+//   }
+
+//   return result;
+// }
