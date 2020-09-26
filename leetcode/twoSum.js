@@ -41,20 +41,29 @@
 //   return result;
 // }
 
+/* O(n) - One-pass Hash Table */
+function twoSum(nums, target) {
+  let map = new Map;
+
+  for(let i = 0; i < nums.length; i++) {
+    // Declare a variable to hold the complement value, in this case target - numInArray
+    let complement = target - nums[i];
+
+    // Check whether map has that complement number
+    if (map.has(complement)) {
+      return [map.get(complement), i]
+    }
+
+    // Add a key:value pair to map Object for current value in array
+    map.set(nums[i], i);
+  }
+}
+
 console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3,2,4], 6));
 console.log(twoSum([3,3], 6));
 
-
-
-
-
-
-
-
-
-
-
+/* Map is an Object and is similar to Object except that the key values can be of ANY type and we set key:value pairs using the map.set value */
 
 
 
