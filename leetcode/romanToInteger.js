@@ -47,57 +47,55 @@ function romanToInt(str) {
   let result = 0;
 
   let obj = {
-   "I": 1,
-   "IV": 4,
-   "V": 5,
-   "IX": 9,
-   "X": 10,
-   "XL": 40,
-   "L": 50,
-   "XC": 90,
-   "C": 100,
-   "CD": 400,
-   "D": 500,
-   "CM": 900,
-   "M": 1000
+    "I": 1,
+    "IV": 4,
+    "V": 5,
+    "IX": 9,
+    "X": 10,
+    "XL": 40,
+    "L": 50,
+    "XC": 90,
+    "C": 100,
+    "CD": 400,
+    "D": 500,
+    "CM": 900,
+    "M": 1000
   }
 
-  switch (str) {
-    case "IV":
-      result = 4;
-      break;
-    case "IX":
-      result = 9;
-      break;
-    case "XL":
-      result = 40;
-      break;
-    case"XC":
-      result = 90;
-      break;
-    case "CD":
-      result = 400;
-      break;
-    case "CM":
-      result = 900;
-      break;
-    default:
-      // Loop over roman character array and grab the matching value from obj
-      for (let i = 0; i < romanNums.length; i++) {
-        switch (romanNum )
-        result += obj[romanNum];
-      }
+  // Loop over roman character array and begin building the resulting integer
+  for (let i = 0; i < romanNums.length; i++) {
+    /* If I comes before V or X, subtract 1 eg: IV = 4 and IX = 9 */
+    if (romanNums[i] === "I" && (romanNums[i + 1] === "V" || romanNums[i + 1] === "X")) {
+      result += (obj[romanNums[i + 1]] - 1);
+
+      /* be sure to skip an index since we're counting two roman characters */
+      i++;
+
+      /* If X comes before L or C, subtract 10 eg: XL = 40 and XC = 90 */
+    } else if (romanNums[i] === "X" && (romanNums[i + 1] === "L" || romanNums[i + 1] === "C")) {
+      result += (obj[romanNums[i + 1]]) - 10;
+      i++;
+
+      /* If C comes before D or M, subtract 100 eg: CD = 400 and CM = 900 */
+    } else if (romanNums[i] === "C" && (romanNums[i + 1] === "D" || romanNums[i + 1] === "M")) {
+      result += (obj[romanNums[i + 1]]) - 100;
+      i++;
+
+      /* Else, simply add the matching romanNum value to the result */
+    } else {
+      result += obj[romanNums[i]];
+    }
   }
 
   return result;
 }
 
-// console.log(romanToInt("III"));
-// console.log(romanToInt("IV"));
-// console.log(romanToInt("IX"));
-// console.log(romanToInt("XL"));
-// console.log(romanToInt("XC"));
-// console.log(romanToInt("CD"));
-// console.log(romanToInt("CM"));
+console.log(romanToInt("III"));
+console.log(romanToInt("IV"));
+console.log(romanToInt("IX"));
+console.log(romanToInt("XL"));
+console.log(romanToInt("XC"));
+console.log(romanToInt("CD"));
+console.log(romanToInt("CM"));
 console.log(romanToInt("LVIII"));
 console.log(romanToInt("MCMXCIV"));
