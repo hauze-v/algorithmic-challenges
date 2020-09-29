@@ -12,7 +12,7 @@ class Person {
   }
 
   greet(yourName) {
-    return `Hello ${yourName}, my name's ${this.myName}`
+    return `Hello ${yourName}, my name is ${this.myName}`
   }
 }
 
