@@ -22,15 +22,7 @@ Output: "255[.]100[.]50[.]0" */
 // }
 
 function defangIPaddr(input) {
-  let addrArray = input.split("");
-
-  for (let i = 0; i < addrArray.length; i++) {
-    if (addrArray[i] === ".") {
-      addrArray[i] = "[.]";
-    }
-  }
-
-  return addrArray.join("");
+  return input.replace(/[.]/g, "[.]");
 }
 
 console.log(defangIPaddr("1.1.1.1")); // "1[.]1[.]1[.]1"
