@@ -16,7 +16,7 @@ Product of digits = 4 * 4 * 2 * 1 = 32
 Sum of digits = 4 + 4 + 2 + 1 = 11 
 Result = 32 - 11 = 21 */
 
-const subtractProductAndSum = function (n) {
+const subtractProductAndSum = function (n) {d
   // Convert number into an array of single digits
   let digits = n.toString().split("");
   var realDigits = digits.map(Number)
