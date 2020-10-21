@@ -39,7 +39,20 @@ ParkingSystem.prototype.addCar = function (carType) {
   }
 }; */
 
-/*  */
+/* --- A better way of doing it --- */
+var ParkingSystem = function (big, medium, small) {
+  /* We use null here to offset the array to start at index 1 instead of 0 */
+  this.numOfSlots = [null, big, medium, small];
+}
+
+ParkingSystem.prototype.addCar = function(carType) {
+  /* If carType exists in the array (not 0) decrement the remaining slots and return true */
+  if (this.numOfSlots[carType]) {
+    this.numOfSlots[carType]--;
+    return true;
+  }
+  return false;
+}
 
  const parkingSystem = new ParkingSystem(1,1,0);
  console.log(parkingSystem.addCar(1)); // true
