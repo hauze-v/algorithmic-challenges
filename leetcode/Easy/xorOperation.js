@@ -33,10 +33,11 @@ var xorOperation = function (n, start) {
 
   /* Define the output and set it initially to the start of the array ( nums[0] )*/
   let output = nums[0];
-  for (let i = 0; i < nums.length; i++) { // loop through the newly created array and calculate XOR
-    output = output ^ nums[i]; 
+  for (let i = 1; i < nums.length; i++) { // loop through the newly created array and calculate XOR
+    output = output ^ nums[i];
   }
   return output;
 };
 
-console.log(xorOperation(5, 0)); // [0,2,4,6,8]  ouput = 8
+// console.log(xorOperation(5, 0)); // [0,2,4,6,8]  ouput = 8
+console.log(xorOperation(4, 3)); // [3, 5, 7, 9] where (3 ^ 5 ^ 7 ^ 9) = 8
