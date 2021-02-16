@@ -21,8 +21,14 @@ Output: "255[.]100[.]50[.]0" */
 //   return addrArray.join("");
 // }
 
+// This is regex
+// function defangIPaddr(input) {
+//   return input.replace(/[.]/g, "[.]");
+// }
+
+// Better function
 function defangIPaddr(input) {
-  return input.replace(/[.]/g, "[.]");
+  return input.split(".").join("[.]");
 }
 
 console.log(defangIPaddr("1.1.1.1")); // "1[.]1[.]1[.]1"
