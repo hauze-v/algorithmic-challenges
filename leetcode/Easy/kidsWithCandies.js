@@ -30,24 +30,46 @@ Check if that sum is the largest of the values in candies[]
 if it is, push true to the resulting array
 */
 
-function kidsWithCandies(candies, extraCandies) {
-  let result = [];
+// function kidsWithCandies(candies, extraCandies) {
+//   let result = [];
 
+//   for (let i = 0; i < candies.length; i++) {
+//     // Add extra candy to current kid's candy pool
+//     let sum = candies[i] + extraCandies;
+
+//     // Check if that new sum is larger than any other kid's candy pool and if so, push true to result array
+//     if (sum >= Math.max.apply(Math, candies)) {
+//       result.push(true);
+//     } else { // otherwise push false
+//       result.push(false);
+//     }
+//   }
+
+//   return result;
+// }
+
+// Another way to get the max is by spreading the array
+const kidsWithCandies = (candies, extraCandies) => {
+  // Define resulting array
+  const res = [];
+
+  // Spread candies array to find max
+  const maxCandies = Math.max(...candies);
+
+  // Walk through the array and compare to max
   for (let i = 0; i < candies.length; i++) {
-    // Add extra candy to current kid's candy pool
-    let sum = candies[i] + extraCandies;
-
-    // Check if that new sum is larger than any other kid's candy pool and if so, push true to result array
-    if (sum >= Math.max.apply(Math, candies)) {
-      result.push(true);
-    } else { // otherwise push false
-      result.push(false);
+    // Add extra candy to kid's pool of candy
+    let candy = candies[i] + extraCandies;
+    if (candy >= maxCandies) {
+      res.push(true);
+    } else {
+      res.push(false);
     }
   }
 
-  return result;
-}
+  return res;
+};
 
-console.log(kidsWithCandies([2,3,5,1,3], 3));
-console.log(kidsWithCandies([4,2,1,1,2], 1)); // [true,false,false,false,false]
-console.log(kidsWithCandies([12,1,12], 10)); // [true,false,true]
+console.log(kidsWithCandies([2, 3, 5, 1, 3], 3));
+console.log(kidsWithCandies([4, 2, 1, 1, 2], 1)); // [true,false,false,false,false]
+console.log(kidsWithCandies([12, 1, 12], 10)); // [true,false,true]
