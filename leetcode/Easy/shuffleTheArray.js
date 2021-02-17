@@ -24,17 +24,28 @@ Output: [1,2,1,2]
     3. For each index of array starting at n, push nums[i - n] and nums[i] to the new array
 */
 
-function shuffle(nums, n) {
-  let output = [];
+// This solution seems hard to follow
+// function shuffle(nums, n) {
+//   let output = [];
 
-  for (let i = n; i < nums.length; i++) {
-    output.push(nums[i - n]); // this will cover the x values (x1, x2, x3)
-    output.push(nums[j=i]); // this will cover the y values (y1, y2, y3)
+//   for (let i = n; i < nums.length; i++) {
+//     output.push(nums[i - n]); // this will cover the x values (x1, x2, x3)
+//     output.push(nums[j=i]); // this will cover the y values (y1, y2, y3)
+//   }
+
+//   return output;
+// }
+
+const shuffle = (arr, n) => {
+  const res = [];
+
+  for (let i = 0; i < arr.length - n; i++) {
+    res.push(arr[i], arr[i + n]);
   }
 
-  return output;
-}
+  return res;
+};
 
 console.log(shuffle([2, 5, 1, 3, 4, 7], 3)); // [2,3,5,4,1,7]
-console.log(shuffle([1,2,3,4,4,3,2,1], 4)); // [1,4,2,3,3,2,4,1]
-console.log(shuffle([1,1,2,2], 2)); // [1,2,1,2]
+console.log(shuffle([1, 2, 3, 4, 4, 3, 2, 1], 4)); // [1,4,2,3,3,2,4,1]
+console.log(shuffle([1, 1, 2, 2], 2)); // [1,2,1,2]
